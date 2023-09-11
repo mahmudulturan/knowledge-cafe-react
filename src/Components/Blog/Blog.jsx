@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types'; 
+import { FaBookmark } from 'react-icons/fa';
 
-const Blog = ({blog}) => {
+
+const Blog = ({blog, handlerBookmark}) => {
     const {title,cover,author_img, author, posted_date, reading_time, hashtags} = blog;
     return (
         <div className='my-10'>
@@ -13,9 +15,9 @@ const Blog = ({blog}) => {
                         <p className='font-semibold text-base '>{posted_date}</p>
                     </div>
                 </div>
-                <div>
+                <div className='flex items-center gap-4 mx-1'>
                     <p className='text-xl font-medium'>{reading_time} min read</p>
-                    {/* <button></button> */}
+                    <button onClick={handlerBookmark}><FaBookmark></FaBookmark></button>
                 </div>
             </div>
             <h3 className='text-4xl font-bold'>{title}</h3>
@@ -26,6 +28,7 @@ const Blog = ({blog}) => {
 
 Blog.propTypes = {
     blog: PropTypes.object.isRequired,
+    handlerBookmark: PropTypes.func.isRequired,
 }
 
 export default Blog;
