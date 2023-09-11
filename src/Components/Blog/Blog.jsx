@@ -17,7 +17,7 @@ const Blog = ({blog, handlerBookmark}) => {
                 </div>
                 <div className='flex items-center gap-4 mx-1'>
                     <p className='text-xl font-medium'>{reading_time} min read</p>
-                    <button onClick={handlerBookmark}><FaBookmark></FaBookmark></button>
+                    <button onClick={()=> handlerBookmark(blog)}><FaBookmark></FaBookmark></button>
                 </div>
             </div>
             <h3 className='text-4xl font-bold'>{title}</h3>

@@ -8,7 +8,8 @@ function App() {
   const [bookmarks, setBookmarks] = useState([])
 
   const handlerBookmark = (blog) => {
-    console.log('clicked');
+    const newBookmarks = [...bookmarks, blog];
+    setBookmarks(newBookmarks)
   }
 
   return (
@@ -16,7 +17,7 @@ function App() {
     <Header></Header>
     <div className='md:flex'>
     <Blogs handlerBookmark={handlerBookmark}></Blogs>
-    <Bookmarks></Bookmarks>
+    <Bookmarks bookmarks={bookmarks}></Bookmarks>
     </div>
     </div>
   )
